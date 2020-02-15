@@ -1,7 +1,8 @@
 {
   "name": "sound-buttons",
+  "description": "A mobile sound board",
   "version": "0.0.1",
-  "author": "Ionic Framework",
+  "author": "Jon & Josh",
   "homepage": "https://ionicframework.com/",
   "scripts": {
     "ng": "ng",
@@ -9,10 +10,13 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "tailwind": "./node_modules/.bin/tailwind build ./src/tailwind-build.css -c ./tailwind.config.js -o ./src/styles.css",
+    "prestart": "npm run tailwind"
   },
   "private": true,
   "dependencies": {
+    "@angular/animations": "~8.2.14",
     "@angular/common": "~8.1.2",
     "@angular/core": "~8.1.2",
     "@angular/forms": "~8.1.2",
@@ -25,10 +29,13 @@
     "@ionic/angular": "^4.7.1",
     "core-js": "^2.5.4",
     "rxjs": "~6.5.1",
+    "tailwindcss": "^1.2.0",
+    "tone": "^13.8.25",
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"
   },
   "devDependencies": {
+    "@angular-builders/custom-webpack": "^8.4.1",
     "@angular-devkit/architect": "~0.801.2",
     "@angular-devkit/build-angular": "~0.801.2",
     "@angular-devkit/core": "~8.1.2",
@@ -37,6 +44,7 @@
     "@angular/compiler": "~8.1.2",
     "@angular/compiler-cli": "~8.1.2",
     "@angular/language-service": "~8.1.2",
+    "@fullhuman/postcss-purgecss": "^2.0.6",
     "@ionic/angular-toolkit": "^2.1.1",
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
@@ -50,9 +58,9 @@
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.0",
     "protractor": "~5.4.0",
+    "tailwindcss": "^1.2.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
     "typescript": "~3.4.3"
-  },
-  "description": "An Ionic project"
+  }
 }

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Sound Buttons</string>
+    <string name="title_activity_main">Sound Buttons</string>
+    <string name="package_name">com.soundbuttons.app</string>
+    <string name="custom_url_scheme">com.soundbuttons.app</string>
+</resources>

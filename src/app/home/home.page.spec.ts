@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
 import { HomePage } from './home.page';
+import { SoundButtonComponent } from '../sound-button/sound-button.component';
 
 describe('HomePage', () => {
   let component: HomePage;
@@ -9,7 +10,7 @@ describe('HomePage', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HomePage ],
+      declarations: [ HomePage, SoundButtonComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 

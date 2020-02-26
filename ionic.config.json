@@ -1,5 +1,7 @@
 {
   "name": "sound-buttons",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

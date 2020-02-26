@@ -1,0 +1,9 @@
+div {
+    height: calc((100vh / 3) - 25px);
+    background-color: #00ff40;
+    box-sizing: border-box;
+}
+
+div:active {
+    background-color: #000;
+}

@@ -3,16 +3,10 @@ class TonePlayer {
 
 	synth: Tone.Synth = new Tone.Synth();
 	element: any;
+	useKeyboard = false;
 
 	constructor(element = document){
-		this.element = element;
-		this.element.addEventListener('keydown', (e: any) => {
-			console.log(e);
-			this.play();
-		});
-		this.element.addEventListener('keyup', (e: any) => {
-			this.stop();
-		})
+		this.setElement(element);
 
 		this.synth = new Tone.Synth({
 			oscillator: {
@@ -27,22 +21,35 @@ class TonePlayer {
 		}).toMaster();
 	}
 
-	play = (note = "D#2") => {
-		this.synth.triggerAttack(note);
+	toggleUseKeyboard = () => {
+		this.useKeyboard = !this.useKeyboard;
+	}
+
+	play = (note: string = 'C4') => {
+		let frequency = this.convertNoteToFreq(note);
+		this.synth.triggerAttack(frequency);
 	}
 
 	stop = () => {
 		this.synth.triggerRelease();
 	}
 
+	convertNoteToFreq = (note: string) => {
+		let frequency = Tone.Frequency(note).toFrequency();
+		return frequency;
+	}
+
 	setElement = (element = document) => {
 		this.element = element;
 		this.element.addEventListener('keydown', (e: any) => {
-			console.log(e);
-			this.play();
+			if (this.useKeyboard){
+				this.play();
+			}
 		});
 		this.element.addEventListener('keyup', (e: any) => {
-			this.stop();
+			if (this.useKeyboard){
+				this.stop();
+			}
 		})
 	}
 }
@@ -54,5 +61,5 @@ class GlobalPlayer {
 
 export { 
 	TonePlayer,
-	GlobalPlayer
+	GlobalPlayer,
 };
